@@ -1,0 +1,15 @@
+<% the_word = Word.where('origin = ?', params[:word])[0] %>
+<div class="container">
+  <h1>ANAGRAMS</h1>
+  <p> YOUR WORD IS: <%=the_word.origin%>  </p>
+  
+
+  <h2> Here are the anagrams: </h2>
+  <% anagrams = the_word.anagrams %>
+  <%anagrams.each do |word| %>
+  
+    <%= word.origin %>
+    <% end %>
+</div>
+
+
